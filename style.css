@@ -1,0 +1,12 @@
+.container{
+    margin: 10vh 20vw 0 20vw;
+}
+
+.hidden{
+    display:none;
+}
+
+th, td{
+    min-width:150px;
+    text-align:center;
+}

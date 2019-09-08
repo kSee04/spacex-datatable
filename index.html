@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="myApp">
+    <head>
+    	<title>SingalPath UI Coding Assessment - Kevin See</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-controller="MainCtrl">
+        <div id="tableContainer" class="container">
+            <h1>SpaceX API SignalPath Coding Assessment - Kevin See</h1>
+            <table ng-table="tableParams" class="table" >
+                    <tr ng-repeat="flight in $data" ng-click="showPresskit()">
+                    <td title="'Flight Number'" sortable="'flight_number'">{{flight.flight_number}}</td>
+                    <td title="'Launch Year'">{{flight.launch_year}}</td>
+                    <td title="'Rocket Name'">{{flight.rocket.rocket_name}}</td>
+                    <td title="'Details'">{{flight.details}}</td>
+                    </tr>
+            </table>
+            <h2 id="loadingMessage">Loading data from SpaceX API...</h2>
+        </div>
+        <div id="pdfContainer" class="container hidden">
+            <button ng-click="showTable()">Return to Table</button>
+            <h1>Presskit for Flight Number {{selected_flight_number}}</h1>
+            <iframe id="pdfFrame" src="" width="100%" height="1000px"></iframe>
+        </div>
+    </body>
+</html>
