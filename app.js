@@ -1,6 +1,7 @@
 var app = angular.module("myApp", ["ngTable"]);
 
 app.controller('MainCtrl', function($scope, $http, NgTableParams) {  
+  //Load and display launch data from SpaceX API
   $http.get('https://api.spacexdata.com/v3/launches')
     .success(function (data){
       let tableData = data;
@@ -12,6 +13,7 @@ app.controller('MainCtrl', function($scope, $http, NgTableParams) {
       console.log("Task Finished.");
   });
 
+  //Hide the data table and show the iframe for displaying the presskit PDFs
   $scope.showPresskit = function(){
     if(this.flight.links && this.flight.links.presskit){
       $scope.selected_flight_number = this.flight.flight_number;
@@ -21,6 +23,7 @@ app.controller('MainCtrl', function($scope, $http, NgTableParams) {
     }
   }
 
+  //Hide the presskit and show the data table
   $scope.showTable = function(){
     document.getElementById('pdfContainer').classList.add('hidden');
     document.getElementById('tableContainer').classList.remove('hidden');

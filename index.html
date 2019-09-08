@@ -10,6 +10,7 @@
         <script src="app.js"></script>
     </head>
     <body ng-controller="MainCtrl">
+        <!-- div for the data table -->
         <div id="tableContainer" class="container">
             <h1>SpaceX API Datatable - Kevin See</h1>
             <table ng-table="tableParams" class="table" >
@@ -22,6 +23,8 @@
             </table>
             <h2 id="loadingMessage">Loading data from SpaceX API...</h2>
         </div>
+
+        <!-- div for the presskit pdfs -->
         <div id="pdfContainer" class="container hidden">
             <button ng-click="showTable()">Return to Table</button>
             <h1>Presskit for Flight Number {{selected_flight_number}}</h1>
