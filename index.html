@@ -1,7 +1,7 @@
 <!doctype html>
 <html ng-app="myApp">
     <head>
-    	<title>SingalPath UI Coding Assessment - Kevin See</title>
+    	<title>SpaceX API Datatable - Kevin See</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
@@ -11,7 +11,7 @@
     </head>
     <body ng-controller="MainCtrl">
         <div id="tableContainer" class="container">
-            <h1>SpaceX API SignalPath Coding Assessment - Kevin See</h1>
+            <h1>SpaceX API Datatable - Kevin See</h1>
             <table ng-table="tableParams" class="table" >
                     <tr ng-repeat="flight in $data" ng-click="showPresskit()">
                     <td title="'Flight Number'" sortable="'flight_number'">{{flight.flight_number}}</td>
